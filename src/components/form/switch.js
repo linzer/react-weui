@@ -1,5 +1,5 @@
 /**
- * Created by yjcxy12 on 16/1/22.
+ * Created by BearJ on 16/2/18.
  */
 
 
@@ -7,7 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class Input extends React.Component {
+export default class Switch extends React.Component {
     static propTypes = {
         defaultValue: PropTypes.string
     };
@@ -17,14 +17,14 @@ export default class Input extends React.Component {
     };
 
     render() {
-        const { className, defaultValue, ...others } = this.props;
+        const { className, ...others } = this.props;
         const cls = classNames({
-            weui_input: true,
+            weui_switch: true,
             [className]: className
         });
 
         return (
-            <input className={cls} defaultValue={defaultValue} {...others}/>
+            <input className={cls} type="checkbox" {...others}/>
         );
     }
 };
